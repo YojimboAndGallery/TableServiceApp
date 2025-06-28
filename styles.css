@@ -1,39 +1,55 @@
 /* ── 기본 ── */
-* { box-sizing:border-box; margin:0; padding:0; font-family:Arial,sans-serif; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
 
-body       { height:100vh; display:flex; justify-content:center; align-items:center; background:#fff; }
-.container { width:90vw;  height:90vh; border:2px solid #000; display:flex; }
+body { height: 100vh; display: flex; justify-content: center; align-items: center; background: #fff; }
+.container { width: 90vw; height: 90vh; border: 2px solid #000; display: flex; }
 
 /* ── 왼쪽 패널 ── */
-.left-panel { width:42%; border-right:2px solid #000; overflow-y:auto; cursor:pointer; }
-.table-grid { width:100%; border-collapse:collapse; table-layout:fixed; }
+.left-panel { width: 42%; border-right: 2px solid #000; overflow-y: auto; cursor: pointer; }
+.table-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
+/* 그룹 라벨(A, B, H 등)을 더 크게 */
+.table-grid th:first-child { font-size: 1.1875rem; } /* 약 19px */
+/* 나머지 셀 기본 스타일 */
 .table-grid th,
-.table-grid td { border:1.5px solid #000; text-align:center; font-size:.95rem; width:20%; height:7.5vh; }
-.table-grid th { font-weight:700; }
-.occupied      { background:#c8ffc8 !important; }
+.table-grid td { border: 1.5px solid #000; text-align: center; font-size: .95rem; width: 20%; height: 7.5vh; }
+.table-grid th { font-weight: 700; }
+.occupied { background: #c8ffc8 !important; }
 
 /* ── 오른쪽 패널 ── */
-.right-panel { flex:1; display:flex; flex-direction:column; padding:2.5% 1.5%; }
+.right-panel { flex: 1; display: flex; flex-direction: column; padding: 2.5% 1.5%; }
 
-.row { display:flex; align-items:center; gap:4%; margin-bottom:2.5%; padding-left:7%; } /* 8% → 7% */
+.row { display: flex; align-items: center; gap: 4%; margin-bottom: 2.5%; padding-left: 7%; }
 
-.table-id      { width:5%;  font-weight:700; font-size:1.1rem; }
-.table-timer   { width:9%;  font-size:.9rem; }
-.action-btn    { width:4%;  aspect-ratio:1; border:none; background:none; cursor:pointer; font-size:1.2rem; }
+/* 테이블 ID, 타이머, 버튼 */
+/* 테이블 ID 글자 크기를 +2 스케일 → 1.25rem (약 20px) */
+.table-id      { width: 5%; font-weight: 700; font-size: 1.25rem; }
+.table-timer   { width: 9%; font-size: .9rem; }
+.action-btn    { width: 4%; aspect-ratio: 1; border: none; background: none; cursor: pointer; font-size: 1.2rem; }
 
-.service-box   { width:39%; font-size:.9rem; border:3px solid #000; text-align:center; padding:4px 0; color:#000; }
+/* ── 수정된 단계 박스 스타일 ── */
+.service-box {
+  width: 39%;
+  min-height: 32px;       /* 높이 스케일 32 */
+  line-height: 32px;      /* 텍스트 수직 중앙 정렬 */
+  font-size: 1.6rem;      /* 글자 크기 스케일 16 */
+  font-weight: 700;       /* 볼드 */
+  border: 3px solid #000;
+  text-align: center;
+  padding: 0 4px;         /* 가로 패딩만 유지 */
+  color: #000;
+}
 
-.service-timer { width:9%; font-size:.9rem; transition:color .3s,font-weight .3s,font-size .3s; }
+.service-timer { width: 9%; font-size: .9rem; transition: color .3s, font-weight .3s, font-size .3s; }
 
 .check-btn {
-  width:4.2%;
-  aspect-ratio:1;
-  border:1.5px solid #000;
-  background:none;
-  cursor:pointer;
-  font-size:1.1rem;
-  margin-left:9%;                /* 8% → 9% */
+  width: 4.2%;
+  aspect-ratio: 1;
+  border: 1.5px solid #000;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 9%;
 }
 
 .check-btn:hover,
-.action-btn:hover { background:#f0f0f0; }
+.action-btn:hover { background: #f0f0f0; }
